@@ -1,12 +1,3 @@
-<!-- <div class="available-todos">
-  <% available_todos.each do |todo| %>
-    <div id="todo-<%=todo.id%>"><%=todo.task%>
-      <form method="POST" action="/todos/<%=todo.id%>/complete">
-        <button>Complete!</button>
-      </form>
-    </div>
-  <% end %>
-</div> -->
 
 <form id="new_todo" method="POST" action="/todos">
   <input id="new_todo_task" type="text" name="todo[task]" />

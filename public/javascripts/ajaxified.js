@@ -1,17 +1,16 @@
 $(document).ready(function(){
   $("#new_todo").on("submit", function(e){
     e.preventDefault();
-    var newTask = $(this).serialize();
 
     $.ajax({
       type: $(this).attr("method"),
       url: $(this).attr("action"),
-      data: newTask
-    }).done(function(){
-      console.log("new task: " + newTask);
+      dataType: 'json',
+      data: $(this).serialize()
+    }).done(function(data){
+      console.log(data)
     }).fail(function(){
-      console.log("failed");
-    });
-
-  });
+      console.log("failed")
+    })
+  })
 });
